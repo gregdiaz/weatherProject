@@ -5,27 +5,42 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
+    grid-auto-rows: 100px 300px auto;
+    grid-template-columns: 407px auto;
     height:100vh;
-    background: #f23557;
+    background: whitesmoke;
     color: #f0d43a;
     justify-content: center;
-    grid-gap: 1em;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    grid-template-areas: "hd hd" "feel zip" "ent ent" "btn btn";
 }
 
 .holder{
 
 }
+.holder .feel{
+    grid-area: feel;
+}
+
+#zip{
+    grid-area: zip;
+}
+#feelings{
+    grid-area: feel;
+}
 
 .entry{
     background: rgba(59, 74, 107, .4);
+    grid-area: ent;
 }
 
 #entryHolder{
+    grid-area: ent;
 
+}
+#generate{
+    grid-area: btn;
 }
 
 #date{
@@ -63,6 +78,7 @@ input{
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
+    grid-area: btn;
 }
 
 button{

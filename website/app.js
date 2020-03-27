@@ -9,19 +9,30 @@ document.getElementById("generate").addEventListener('click',action);
 function action (e) {
     debugger;
     zip = document.getElementById("zip").value;
-    apiFunction(endpoint, zip, key);
+    postData(endpoint, zip, key);
 }
 
-const apiFunction = async(endpoint, zip, key) => {
+const postData = async(endpoint, zip, key) => {
     const fetchApi = endpoint+zip+",us&appid="+key;
     debugger
-    const res = await fetch(fetchApi)
-    try {
-        const data = await res.json();
-        console.log(data)
-        return data;
-    }
-    catch(error){
-        console.log("error", error);
-    }
+    const res = await fetch(fetchApi,{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+        },
+        mode: 'no-cors',
+        credentials: 'same-origin', 
+    });
+    console.log(res);
+    
+    
+    // try {
+    //     const data = await res.json();
+    //     console.log(data)
+    //     return data;
+    // }
+    // catch(error){
+    //     console.log("error", error);
+    // }
 };

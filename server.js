@@ -6,11 +6,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 /* Middleware*/
-debugger;
-app.use(function (req, res) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
-    console.log(req);
-});
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -22,5 +17,12 @@ app.use(express.static('website'));
 const port = 5000;
 // Setup Server
 const server = app.listen(port, ()=>{console.log(`Server Running on localhost: ${port}`)});
+// const data = [];
+ //app.post('/',postapp)
+// function postapp(req,res){
+//     data.push(req.body)
+//     console.log(data);
+// }
+
 
 
