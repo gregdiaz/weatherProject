@@ -1,8 +1,7 @@
 // Personal API Key for OpenWeatherMap API
-const api = "6dce3e4c6dcdfaf69381d22179b69407";
+
 // Event listener to add function to existing HTML DOM element
-debugger;
-document.getElementById("generate").addEventListener('click',action);
+
 /* Function called by event listener */
 function action (e) {
     apiFunction(api);

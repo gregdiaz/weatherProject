@@ -10,6 +10,10 @@ const bodyParser = require('body-parser');
 //Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
+  next();
+});
 // Cors for cross origin allowance
 const cors = require('cors');
 app.use(cors());
