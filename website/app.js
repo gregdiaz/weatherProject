@@ -7,7 +7,6 @@ let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 document.getElementById("generate").addEventListener('click',action);
 function action (e) {
-    debugger;
     zip = document.getElementById("zip").value;
     postData(endpoint, zip, key);
 }
@@ -20,19 +19,15 @@ const postData = async(endpoint, zip, key) => {
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
+            "Access-Control-Allow-Credentials" : true 
         },
         mode: 'no-cors',
         credentials: 'same-origin', 
-    });
-    console.log(res);
-    
-    
-    // try {
-    //     const data = await res.json();
-    //     console.log(data)
-    //     return data;
-    // }
-    // catch(error){
-    //     console.log("error", error);
-    // }
+    }).then(function(response) {
+        console.log(response);
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log(myJson);
+      });
 };
