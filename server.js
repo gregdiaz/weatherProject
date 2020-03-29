@@ -17,12 +17,22 @@ app.use(express.static('website'));
 const port = 5000;
 // Setup Server
 const server = app.listen(port, ()=>{console.log(`Server Running on localhost: ${port}`)});
-// const data = [];
- //app.post('/',postapp)
-// function postapp(req,res){
-//     data.push(req.body)
-//     console.log(data);
-// }
 
+app.get('/', function (req, res) {
+    res.send('GET request to the homepage');
+});
 
+app.post('/', addEntry);
+
+function addEntry(req,res){
+    console.log(req);
+    newEntry = {
+        entry:req.body.entryHolder,
+        date: req.body.date,
+        temp:req.body.temp,
+        content:req.body.content
+    }
+    projectData.push(newEntry);
+    console.log(projectData);
+};
 
