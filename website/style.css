@@ -5,7 +5,8 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: 100px 300px auto;
+    font-size: 30px;
+    grid-auto-rows: 100px 200px 300px;
     grid-template-columns: 407px auto;
     height:100vh;
     background: whitesmoke;
@@ -21,23 +22,24 @@ body{
 }
 
 .holder{
+    color:black;
 
 }
-.holder .feel{
+.feel{
     grid-area: feel;
 }
-
 
 #zip{
     grid-area: zip;
 }
 #feelings{
     grid-area: feel;
-}
-
-.btn{
-    grid-area: btn;
-    
+    width: 725px;
+    height: 157px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    resize: none;
 }
 
 .entry{
@@ -50,10 +52,6 @@ body{
     color: black;
 
 }
-#generate{
-    grid-area: btn;
-}
-
 #date{
 
 }
@@ -63,12 +61,14 @@ body{
 }
 
 #content{
-    background-color: #3b4a6b;
 
 }
 
 .headline {
-
+    display: flex;
+    align-content: center;
+    margin: auto;
+    font-size: 30px;
 }
 .title{
 
@@ -93,13 +93,13 @@ input{
 }
 
 button{
-    width: 400px;
-    height: 100px;
+    grid-area: btn;
+    width: 320px;
+    height: 87px;
     background: #3b4a6b;
     color: #f0d43a;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
-    border: none;
     box-shadow: 2px 4px 5px #444;
 }
 h1{
