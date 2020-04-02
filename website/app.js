@@ -20,23 +20,15 @@ async function action (e) {
         content
     });
     const entry = await postData('/', data);
-    entries.push(entry);
-    debugger;
     const element = document.getElementById("entryHolder");
-    zz = Object.keys(entries[0]);
-    xxt = Object.values(entries[0]);
-    zz.forEach(e => {
+    elementKeys = Object.keys(entry);
+    elementKeys.forEach(info => {
         let createDiv = document.createElement("div");
-        createDiv.setAttribute("id",e);
+        createDiv.setAttribute("id",info);
+        createDiv.appendChild(document.createTextNode(entry[info]));
         element.appendChild(createDiv);
+        
     });
-
-   // typedata(entries);
-
-
-    // var t = document.getElementById(e);
-    // t.innerHTML = Object.values(entries[0]);
-
 }
 const getData = async(endpoint, zip, key) => {
     const fetchApi = endpoint+zip+",us&appid="+key;
