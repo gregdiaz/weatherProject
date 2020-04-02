@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+projectData = [];
 // Require Express to run server and routes
 const express = require('express');
 // Start up an instance of app
@@ -14,7 +14,25 @@ const cors = require('cors');
 app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
-app.use(express.static('commentsOnlyJS'));
 const port = 5000;
 // Setup Server
 const server = app.listen(port, ()=>{console.log(`Server Running on localhost: ${port}`)});
+
+app.get('/', function (req, res) {
+    res.send('GET request to the homepage');
+});
+
+app.post('/', addEntry);
+
+function addEntry(req,res){
+    console.log("Body", req.body);
+    newEntry = {
+        date: req.body.newDate,
+        temp:req.body.main.temp,
+        content:req.body.content
+    }
+    projectData.push(newEntry);
+    console.log("server", projectData);
+    res.send(newEntry);
+};
+

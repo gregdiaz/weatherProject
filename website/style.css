@@ -5,29 +5,53 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
+    font-size: 30px;
+    grid-auto-rows: 100px 200px 300px;
+    grid-template-columns: 407px auto;
     height:100vh;
-    background: #f23557;
+    background: whitesmoke;
     color: #f0d43a;
     justify-content: center;
-    grid-gap: 1em;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
+    grid-template-areas: 
+    "hd zip" 
+    "feel feel" 
+    "ent ent"
+    "btn btn";
 }
 
 .holder{
+    color:black;
 
+}
+.feel{
+    grid-area: feel;
+}
+
+#zip{
+    grid-area: zip;
+}
+#feelings{
+    grid-area: feel;
+    width: 725px;
+    height: 157px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    resize: none;
 }
 
 .entry{
     background: rgba(59, 74, 107, .4);
+    grid-area: ent;
 }
 
 #entryHolder{
+    grid-area: ent;
+    color: black;
 
 }
-
 #date{
 
 }
@@ -37,12 +61,14 @@ body{
 }
 
 #content{
-    background-color: #3b4a6b;
 
 }
 
 .headline {
-
+    display: flex;
+    align-content: center;
+    margin: auto;
+    font-size: 30px;
 }
 .title{
 
@@ -63,16 +89,17 @@ input{
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     border: none;
+    grid-area: btn;
 }
 
 button{
-    width: 400px;
-    height: 100px;
+    grid-area: btn;
+    width: 320px;
+    height: 87px;
     background: #3b4a6b;
     color: #f0d43a;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
-    border: none;
     box-shadow: 2px 4px 5px #444;
 }
 h1{
